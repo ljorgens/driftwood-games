@@ -35,10 +35,11 @@
       <ul class="games">
         <!--
           One <li class="game"> per game. To add a game: copy this block, put its
-          clip.mp4 + poster.jpg in /games/<slug>/, and update the text and links.
+          clip.mp4 + poster.jpg in /games/<slug>/, and update the text and links
+          (keep target="_blank" so games open in a new tab).
         -->
         <li class="game">
-          <a class="clip" href="https://tempest-isles.onrender.com/" tabindex="-1" aria-hidden="true">
+          <a class="clip" href="https://tempest-isles.onrender.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <video
               src="/games/tempest-isles/clip.mp4"
               poster="/games/tempest-isles/poster.jpg"
@@ -50,7 +51,7 @@
             ></video>
           </a>
           <div class="body">
-            <h3><a href="https://tempest-isles.onrender.com/">Tempest Isles</a></h3>
+            <h3><a href="https://tempest-isles.onrender.com/" target="_blank" rel="noopener">Tempest Isles<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="pitch">
               Conquer nine storm-battered islands, one country at a time, while earthquakes, floods and
               rebellions upend your plans. Play against three AI admirals, or pass the device around for up
@@ -64,8 +65,8 @@
               <li>Open source</li>
             </ul>
             <p class="actions">
-              <a class="btn" href="https://tempest-isles.onrender.com/">Play Tempest Isles</a>
-              <a class="link" href="https://github.com/ljorgens/tempest-isles">Source code</a>
+              <a class="btn" href="https://tempest-isles.onrender.com/" target="_blank" rel="noopener">Play Tempest Isles<span class="visually-hidden"> (opens in a new tab)</span></a>
+              <a class="link" href="https://github.com/ljorgens/tempest-isles" target="_blank" rel="noopener">Source code<span class="visually-hidden"> (opens in a new tab)</span></a>
             </p>
           </div>
         </li>
