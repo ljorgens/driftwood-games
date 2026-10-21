@@ -1,0 +1,274 @@
+/* Driftwood Games: one stylesheet for every page. */
+
+@font-face {
+  font-family: 'IM Fell English SC';
+  src: url('/fonts/im-fell-english-sc-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('/fonts/alegreya-sans-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  src: url('/fonts/alegreya-sans-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --sea-0: #0c1c2a;
+  --sea-1: #13293b;
+  --sea-2: #1d3a50;
+  --sand: #efe4cc;
+  --sand-dim: #c9bb9c;
+  --wood: #b98a52;
+  --wood-hi: #d7a868;
+  --ink: #2a2116;
+  --ink-soft: #5a4a33;
+  --card: #f4ead4;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0 16px;
+  font: 18px/1.55 'Alegreya Sans', system-ui, sans-serif;
+  color: var(--sand);
+  background: radial-gradient(1100px 600px at 50% -10%, var(--sea-2), var(--sea-1) 55%, var(--sea-0)) fixed, var(--sea-0);
+}
+
+a {
+  color: var(--wood-hi);
+}
+a:hover {
+  color: var(--sand);
+}
+:focus-visible {
+  outline: 3px solid var(--wood-hi);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ----- masthead ----- */
+.masthead {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 8vw, 4.5rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+}
+.masthead h1 {
+  margin: 0;
+  font: 400 clamp(2.4rem, 8vw, 4rem) / 1.05 'IM Fell English SC', Georgia, serif;
+  letter-spacing: 0.03em;
+  color: var(--sand);
+}
+.tagline {
+  margin: 0.6rem 0 0;
+  color: var(--sand-dim);
+  font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+}
+
+/* ----- game cards ----- */
+main {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.games {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+.game {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+.clip {
+  display: block;
+  background: var(--sea-0);
+}
+.clip video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 900 / 674;
+  object-fit: cover;
+}
+.body {
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+}
+.body h3 {
+  margin: 0 0 0.5rem;
+  font: 400 clamp(1.8rem, 4vw, 2.3rem) / 1.1 'IM Fell English SC', Georgia, serif;
+}
+.body h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.body h3 a:hover {
+  text-decoration: underline;
+}
+.pitch {
+  margin: 0 0 0.6rem;
+}
+.credit {
+  margin: 0 0 0.9rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.2rem;
+  padding: 0;
+}
+.tags li {
+  padding: 0.1rem 0.6rem;
+  border: 1px solid rgba(42, 33, 22, 0.25);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.actions {
+  margin: auto 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.2rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  background: var(--sea-1);
+  color: var(--sand);
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn:hover {
+  background: var(--sea-2);
+  color: var(--sand);
+}
+
+.actions .link {
+  color: var(--ink-soft);
+}
+.actions .link:hover {
+  color: var(--ink);
+}
+.game :focus-visible {
+  outline-color: var(--sea-2);
+}
+
+.more {
+  margin: 2rem 0 0;
+  text-align: center;
+  color: var(--sand-dim);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .game {
+    grid-template-columns: 1fr;
+  }
+  .clip video {
+    height: auto;
+  }
+}
+
+/* ----- footer ----- */
+footer {
+  max-width: 980px;
+  margin: 3rem auto 0;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid rgba(239, 228, 204, 0.15);
+  text-align: center;
+  color: var(--sand-dim);
+}
+footer p {
+  margin: 0 0 0.4rem;
+}
+.fine {
+  font-size: 0.9rem;
+}
+
+/* ----- text pages (terms, privacy, 404) ----- */
+.page {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 2rem clamp(1.1rem, 4vw, 2.6rem) 2.4rem;
+  background: var(--card);
+  color: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+.page h1 {
+  margin: 0 0 0.2rem;
+  font: 400 2.1rem/1.15 'IM Fell English SC', Georgia, serif;
+}
+.page h2 {
+  margin: 1.8rem 0 0.4rem;
+  font-size: 1.2rem;
+}
+.page p,
+.page li {
+  margin: 0 0 0.8rem;
+}
+.page ul {
+  padding-left: 1.3rem;
+}
+.page a {
+  color: #6a4512;
+}
+.page a:hover {
+  color: var(--ink);
+}
+.page .meta {
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
+}
+.page .summary {
+  border-left: 3px solid var(--wood);
+  padding: 0.3rem 0 0.3rem 1rem;
+}
+.page .back {
+  display: inline-block;
+  margin-top: 1.6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
