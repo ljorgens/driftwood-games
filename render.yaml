@@ -20,10 +20,10 @@ services:
       - path: /games/*
         name: Cache-Control
         value: public, max-age=86400
-      # Strict CSP: only the ideas form may talk to another site (Formspree).
+      # The site loads nothing from other sites, so the CSP can be strict.
       - path: /*
         name: Content-Security-Policy
-        value: "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https://formspree.io; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'"
+        value: "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
       - path: /*
         name: Referrer-Policy
         value: strict-origin-when-cross-origin

@@ -78,54 +78,14 @@
       <section class="ideas" id="send" aria-labelledby="ideas-title">
         <h2 id="ideas-title">What should I build next?</h2>
         <p>
-          Is there an old strategy game you miss, or one you’ve always wanted to play? Send me the idea. Made
-          your own version of one of our games? <a href="/community.html">Send that in too</a>. I read every
-          one.
+          Is there an old strategy game you miss, or one you’ve always wanted to play? Email me the idea at
+          <a href="mailto:driftwoodgames@proton.me">driftwoodgames@proton.me</a>. I read every one.
         </p>
-        <!-- Formspree emails each submission to driftwoodgames@proton.me (see privacy.html#ideas). -->
-        <form id="idea-form" action="https://formspree.io/f/FORM_ID" method="POST">
-          <fieldset class="kind" id="send-mod">
-            <legend>What are you sending?</legend>
-            <label><input type="radio" name="kind" value="Game idea" checked /> A game idea</label>
-            <label><input type="radio" name="kind" value="Community mod" /> A mod I made</label>
-          </fieldset>
-          <!-- main.js shows these only when "A mod I made" is picked; without JavaScript they always show. -->
-          <div class="mod-fields">
-            <label for="mod-game">Which game is it based on?</label>
-            <select id="mod-game" name="mod_game">
-              <option>Tempest Isles</option>
-              <option>Another game</option>
-            </select>
-            <label for="mod-link">Link to play it</label>
-            <input id="mod-link" name="mod_link" type="url" maxlength="500" placeholder="https://" />
-            <label for="mod-name">Mod name <span class="optional">(optional)</span></label>
-            <input id="mod-name" name="mod_name" type="text" maxlength="100" />
-            <label for="credit-as">Credit me as <span class="optional">(optional, shown publicly if featured)</span></label>
-            <input id="credit-as" name="credit_as" type="text" maxlength="60" autocomplete="nickname" />
-          </div>
-          <label for="idea" id="idea-label">Your idea</label>
-          <textarea
-            id="idea"
-            name="idea"
-            rows="4"
-            maxlength="2000"
-            required
-            placeholder="A game you loved, a twist on one, or something new"
-          ></textarea>
-          <label for="email">Email <span class="optional">(optional, if you’d like a reply)</span></label>
-          <input id="email" name="email" type="email" maxlength="200" autocomplete="email" />
-          <!-- Spam trap: people never see this field, bots fill it in. -->
-          <div class="trap" aria-hidden="true">
-            <label for="gotcha">Leave this empty</label>
-            <input id="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-          </div>
-          <input type="hidden" name="_subject" value="Game idea from the Driftwood Games site" />
-          <div class="form-row">
-            <button class="btn" type="submit">Send idea</button>
-            <p class="form-note">Sent through Formspree. See the <a href="/privacy.html#ideas">privacy policy</a>.</p>
-          </div>
-          <p id="idea-status" class="form-status" role="status" aria-live="polite"></p>
-        </form>
+        <p>
+          Made your own version of one of our games? See <a href="/community.html">Community Mods</a> for how
+          to get it listed.
+        </p>
+        <p class="actions"><a class="btn" href="mailto:driftwoodgames@proton.me?subject=Game%20idea">Email an idea</a></p>
       </section>
     </main>
 
