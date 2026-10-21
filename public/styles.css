@@ -360,3 +360,88 @@ footer p {
 .form-status.error {
   color: #8a2a12;
 }
+
+/* ----- ideas form: idea / mod choice ----- */
+.ideas fieldset.kind {
+  margin: 0 0 0.3rem;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.4rem;
+}
+.ideas fieldset.kind legend {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+.ideas fieldset.kind label {
+  margin: 0;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.ideas fieldset.kind input {
+  width: auto;
+  accent-color: var(--sea-1);
+}
+.ideas .mod-fields:not([hidden]) {
+  display: grid;
+  gap: 0.35rem;
+}
+.ideas select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fffaf0;
+  border: 1px solid rgba(42, 33, 22, 0.35);
+  border-radius: 6px;
+}
+
+/* ----- community page ----- */
+.community h2 {
+  font: 400 1.6rem/1.2 'IM Fell English SC', Georgia, serif;
+  margin-top: 2rem;
+}
+.community ol {
+  padding-left: 1.4rem;
+}
+.mods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+.mod {
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(42, 33, 22, 0.2);
+  border-radius: 8px;
+  background: #fffaf0;
+}
+.mod h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.mod .by {
+  margin: 0 0 0.4rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.mods-empty {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.page .btn {
+  color: var(--sand);
+}
+.page .btn:hover {
+  color: var(--sand);
+}
+.ideas > p a {
+  color: #6a4512;
+}

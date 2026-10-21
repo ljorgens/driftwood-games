@@ -67,6 +67,7 @@
             <p class="actions">
               <a class="btn" href="https://tempest-isles.onrender.com/" target="_blank" rel="noopener">Play Tempest Isles<span class="visually-hidden"> (opens in a new tab)</span></a>
               <a class="link" href="https://github.com/ljorgens/tempest-isles" target="_blank" rel="noopener">Source code<span class="visually-hidden"> (opens in a new tab)</span></a>
+              <a class="link" href="/community.html#tempest-isles">Community mods</a>
             </p>
           </div>
         </li>
@@ -74,15 +75,35 @@
 
       <p class="more">More games are on the way.</p>
 
-      <section class="ideas" aria-labelledby="ideas-title">
+      <section class="ideas" id="send" aria-labelledby="ideas-title">
         <h2 id="ideas-title">What should I build next?</h2>
         <p>
-          Is there an old strategy game you miss, or one you’ve always wanted to play? Send me the idea. I read
-          every one.
+          Is there an old strategy game you miss, or one you’ve always wanted to play? Send me the idea. Made
+          your own version of one of our games? <a href="/community.html">Send that in too</a>. I read every
+          one.
         </p>
         <!-- Formspree emails each submission to driftwoodgames@proton.me (see privacy.html#ideas). -->
         <form id="idea-form" action="https://formspree.io/f/FORM_ID" method="POST">
-          <label for="idea">Your idea</label>
+          <fieldset class="kind">
+            <legend>What are you sending?</legend>
+            <label><input type="radio" name="kind" value="Game idea" checked /> A game idea</label>
+            <label><input type="radio" name="kind" value="Community mod" /> A mod I made</label>
+          </fieldset>
+          <!-- Shown only when "A mod I made" is picked (main.js). -->
+          <div class="mod-fields" hidden>
+            <label for="mod-game">Which game is it based on?</label>
+            <select id="mod-game" name="mod_game">
+              <option>Tempest Isles</option>
+              <option>Another game</option>
+            </select>
+            <label for="mod-link">Link to play it</label>
+            <input id="mod-link" name="mod_link" type="url" maxlength="500" placeholder="https://" />
+            <label for="mod-name">Mod name <span class="optional">(optional)</span></label>
+            <input id="mod-name" name="mod_name" type="text" maxlength="100" />
+            <label for="credit-as">Credit me as <span class="optional">(optional, shown publicly if featured)</span></label>
+            <input id="credit-as" name="credit_as" type="text" maxlength="60" autocomplete="nickname" />
+          </div>
+          <label for="idea" id="idea-label">Your idea</label>
           <textarea
             id="idea"
             name="idea"
