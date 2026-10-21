@@ -20,6 +20,7 @@
 }
 
 :root {
+  color-scheme: dark;
   --sea-0: #0c1c2a;
   --sea-1: #13293b;
   --sea-2: #1d3a50;
@@ -337,4 +338,27 @@ footer p {
 
 .mods:empty {
   display: none;
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    padding: 0;
+  }
+  .page,
+  .game,
+  .ideas {
+    box-shadow: none;
+    background: #fff;
+  }
+  .clip,
+  .actions .btn,
+  .back {
+    display: none;
+  }
+  .page a[href^="http"]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+  }
 }
