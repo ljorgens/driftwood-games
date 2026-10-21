@@ -47,3 +47,39 @@ if ('IntersectionObserver' in window) {
     if (reduce.matches) clips.forEach((v) => v.pause());
   });
 }
+
+// Game ideas: send through Formspree without leaving the page. Without
+// JavaScript the form still posts normally and Formspree shows its own page.
+const form = document.getElementById('idea-form');
+if (form && window.fetch) {
+  const status = document.getElementById('idea-status');
+  const button = form.querySelector('button[type="submit"]');
+  const say = (html, error = false) => {
+    status.innerHTML = html;
+    status.classList.toggle('error', error);
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    button.disabled = true;
+    say('Sending…');
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      say('Thanks! Your idea is on its way.');
+    } catch {
+      say(
+        'Sorry, that didn’t send. Please try again, or email it to ' +
+          '<a href="mailto:driftwoodgames@proton.me">driftwoodgames@proton.me</a>.',
+        true,
+      );
+    } finally {
+      button.disabled = false;
+    }
+  });
+}

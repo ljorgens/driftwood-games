@@ -73,6 +73,39 @@
       </ul>
 
       <p class="more">More games are on the way.</p>
+
+      <section class="ideas" aria-labelledby="ideas-title">
+        <h2 id="ideas-title">What should I build next?</h2>
+        <p>
+          Is there an old strategy game you miss, or one you’ve always wanted to play? Send me the idea. I read
+          every one.
+        </p>
+        <!-- Formspree emails each submission to driftwoodgames@proton.me (see privacy.html#ideas). -->
+        <form id="idea-form" action="https://formspree.io/f/FORM_ID" method="POST">
+          <label for="idea">Your idea</label>
+          <textarea
+            id="idea"
+            name="idea"
+            rows="4"
+            maxlength="2000"
+            required
+            placeholder="A game you loved, a twist on one, or something new"
+          ></textarea>
+          <label for="email">Email <span class="optional">(optional, if you’d like a reply)</span></label>
+          <input id="email" name="email" type="email" maxlength="200" autocomplete="email" />
+          <!-- Spam trap: people never see this field, bots fill it in. -->
+          <div class="trap" aria-hidden="true">
+            <label for="gotcha">Leave this empty</label>
+            <input id="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="_subject" value="Game idea from the Driftwood Games site" />
+          <div class="form-row">
+            <button class="btn" type="submit">Send idea</button>
+            <p class="form-note">Sent through Formspree. See the <a href="/privacy.html#ideas">privacy policy</a>.</p>
+          </div>
+          <p id="idea-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </main>
 
     <footer>
