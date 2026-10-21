@@ -104,8 +104,11 @@ if (form && window.fetch) {
     if (location.hash !== '#send-mod') return;
     form.querySelector('input[value="Community mod"]').checked = true;
     sync();
-    document.getElementById('send').scrollIntoView();
-    modLink.focus({ preventScroll: true });
+    // Wait for the browser's own jump to #send-mod, which would take focus back.
+    setTimeout(() => {
+      document.getElementById('send').scrollIntoView();
+      modLink.focus({ preventScroll: true });
+    }, 0);
   };
   window.addEventListener('hashchange', openFromHash);
   sync();

@@ -84,13 +84,13 @@
         </p>
         <!-- Formspree emails each submission to driftwoodgames@proton.me (see privacy.html#ideas). -->
         <form id="idea-form" action="https://formspree.io/f/FORM_ID" method="POST">
-          <fieldset class="kind">
+          <fieldset class="kind" id="send-mod">
             <legend>What are you sending?</legend>
             <label><input type="radio" name="kind" value="Game idea" checked /> A game idea</label>
             <label><input type="radio" name="kind" value="Community mod" /> A mod I made</label>
           </fieldset>
-          <!-- Shown only when "A mod I made" is picked (main.js). -->
-          <div class="mod-fields" hidden>
+          <!-- main.js shows these only when "A mod I made" is picked; without JavaScript they always show. -->
+          <div class="mod-fields">
             <label for="mod-game">Which game is it based on?</label>
             <select id="mod-game" name="mod_game">
               <option>Tempest Isles</option>

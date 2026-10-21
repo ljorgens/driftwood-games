@@ -309,7 +309,7 @@ footer p {
   font: inherit;
   color: var(--ink);
   background: #fffaf0;
-  border: 1px solid rgba(42, 33, 22, 0.35);
+  border: 1px solid rgba(42, 33, 22, 0.6);
   border-radius: 6px;
 }
 .ideas textarea {
@@ -398,7 +398,7 @@ footer p {
   font: inherit;
   color: var(--ink);
   background: #fffaf0;
-  border: 1px solid rgba(42, 33, 22, 0.35);
+  border: 1px solid rgba(42, 33, 22, 0.6);
   border-radius: 6px;
 }
 
@@ -444,4 +444,8 @@ footer p {
 }
 .ideas > p a {
   color: #6a4512;
+}
+
+.mods:empty {
+  display: none;
 }
